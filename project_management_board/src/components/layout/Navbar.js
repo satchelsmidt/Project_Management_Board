@@ -7,7 +7,8 @@ const NavBar = () => {
     return (
         <nav className="nav-wrapper blue darken-3">
             <div className="container">
-                <Link to='/' className="brand-logo">Project Boar</Link>
+                <Link to='/' className="brand-logo left">Project Boar</Link>
+                
                 <SignedInLinks />
                 <SignedOutLinks />
             </div>

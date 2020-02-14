@@ -1,47 +1,16 @@
 import React from 'react'
+import ProjectSummary from './ProjectSummary'
 
-const ProjectList = () => {
+const ProjectList = ({projects}) => {
+
     return (
         <div className="project-list section">
-            <div className="card z-depth-0 project-summaary">
-                <div className="card-content grey-text-text-darken-3">
-                    <span className="card-title">
-                        Project Title
-                    </span>
-                    <p>
-                        Posted by the Net Ninja
-                    </p>
-                    <p className="grey-text">
-                        3rd of Sept, 2 am
-                    </p>
-                </div>
-            </div>
-            <div className="card z-depth-0 project-summaary">
-                <div className="card-content grey-text-text-darken-3">
-                    <span className="card-title">
-                        Project Title
-                    </span>
-                    <p>
-                        Posted by the Net Ninja
-                    </p>
-                    <p className="grey-text">
-                        3rd of Sept, 2 am
-                    </p>
-                </div>
-            </div>
-            <div className="card z-depth-0 project-summaary">
-                <div className="card-content grey-text-text-darken-3">
-                    <span className="card-title">
-                        Project Title
-                    </span>
-                    <p>
-                        Posted by the Net Ninja
-                    </p>
-                    <p className="grey-text">
-                        3rd of Sept, 2 am
-                    </p>
-                </div>
-            </div>
+            {/* use this format to ensure that IF we have projects, then we map all this stuff, and don't if we don't have projects */}
+           { projects && projects.map(project=>{
+               return(
+                   <ProjectSummary project={project} key={project.id} />
+               )
+           })}
         </div>
     )
 }
